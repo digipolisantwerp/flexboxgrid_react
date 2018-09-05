@@ -23,6 +23,7 @@
     "react-component"
   ],
   "dependencies": {
+    "@a-ui/flexboxgrid": "1.0.1",
     "flexboxgrid2": "^7.2.0",
     "prop-types": "^15.5.8"
   },
