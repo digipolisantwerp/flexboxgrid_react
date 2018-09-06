@@ -1,17 +1,25 @@
 # react-flexbox-grid
+
 [![npm version](https://badge.fury.io/js/react-flexbox-grid.svg)](https://badge.fury.io/js/react-flexbox-grid)
 [![Build Status](https://travis-ci.org/roylee0704/react-flexbox-grid.svg)](https://travis-ci.org/roylee0704/react-flexbox-grid)
 [![NPM Status](http://img.shields.io/npm/dm/react-flexbox-grid.svg?style=flat)](https://www.npmjs.org/package/react-flexbox-grid)
 
-
 `react-flexbox-grid` is a set of React components that implement [flexboxgrid.css](https://goo.gl/imrHBZ). It even has an optional support for [CSS Modules](https://github.com/webpack-contrib/css-loader#css-modules) with some extra configuration.
 
+This version of `react-flexbox-grid` is meant to be used with Digipolis related applications.
+Instead of using the the default stylesheet it uses an adjusted stylesheet according to the
+style guide of city of Antwerp.
+
+This version relies on the @a-ui npm package, to provide the adjusted stylesheet.
+
+It is recommended to use this version alongside the Antwerp City Platform as a Service User Interface
+https://github.com/digipolisantwerp/acpaas-ui_react
+
+Based on the orginal adaption for flexboxgrid :
 
 **http://roylee0704.github.io/react-flexbox-grid/**
 
-
-Setup
------
+## Setup
 
 ### Installation
 
@@ -78,14 +86,13 @@ If this doesn't work for you, use the build located in the dist directory. This 
 
 Use the pre-bundled build located in the dist directory. It contains a single umd js distributable and built css file.
 
-Usage
------
+## Usage
 
 Now you can import and use the components:
 
 ```jsx
-import React from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import React from "react";
+import { Grid, Row, Col } from "react-flexbox-grid";
 
 class App extends React.Component {
   render() {
@@ -106,25 +113,23 @@ class App extends React.Component {
 
 For the time being always use `fluid` for `<Grid>` to prevent [horizontal overflow issues](https://github.com/kristoferjoseph/flexboxgrid/issues/144).
 
+## Example
 
-Example
--------
 Looking for a complete example? Head over to [react-flexbox-grid-example](https://github.com/roylee0704/react-flexbox-grid-example).
 
+Another useful example for this spesific
 
-Advanced composition
--------
+## Advanced composition
 
 We also export functions for generating Row and Column class names for use in other components.
 
-For example, suppose you're using a third party component that accepts `className` and you would like it to be rendered as `Col`.  You could do so by extracting the column sizing props that `MyComponent` uses and then pass the generated className on to `SomeComponent`
-
+For example, suppose you're using a third party component that accepts `className` and you would like it to be rendered as `Col`. You could do so by extracting the column sizing props that `MyComponent` uses and then pass the generated className on to `SomeComponent`
 
 ```jsx
-import React from 'react';
-import { Row, Col, getRowProps, getColumnProps } from 'react-flexbox-grid';
+import React from "react";
+import { Row, Col, getRowProps, getColumnProps } from "react-flexbox-grid";
 // a component that accepts a className
-import SomeComponent from 'some-package';
+import SomeComponent from "some-package";
 
 export default function MyComponent(props) {
   const colProps = getColumnProps(props);
@@ -138,20 +143,24 @@ export default function MyComponent(props) {
   );
 }
 
-MyComponent.propTypes = Object.assign({
-  onChange: React.PropTypes.func.isRequired,
-  value: React.PropTypes.string.isRequired,
-}, Col.propTypes, Row.propTypes);  // Re-use existing Row and Col propType validations
+MyComponent.propTypes = Object.assign(
+  {
+    onChange: React.PropTypes.func.isRequired,
+    value: React.PropTypes.string.isRequired
+  },
+  Col.propTypes,
+  Row.propTypes
+); // Re-use existing Row and Col propType validations
 
 // Can now be rendered as: <MyComponent end="sm" sm={8} value="my input value" onChange={...} />
 ```
 
-Contributors
------------
-[![Roy Lee](https://avatars0.githubusercontent.com/u/3850661?v=3&s=144)](https://github.com/roylee0704/) | [![Helder Santana](https://avatars1.githubusercontent.com/u/134727?v=3&s=144)](https://github.com/heldr/) | [![Matija Marohnić](https://avatars2.githubusercontent.com/u/471278?v=3&s=144)](https://github.com/silvenon)
----|---|---
-[Roy Lee](https://github.com/roylee0704) | [Helder Santana](https://github.com/heldr/) | [Matija Marohnić](https://github.com/silvenon)
+## Contributors
 
-License
--------
+| [![Roy Lee](https://avatars0.githubusercontent.com/u/3850661?v=3&s=144)](https://github.com/roylee0704/) | [![Helder Santana](https://avatars1.githubusercontent.com/u/134727?v=3&s=144)](https://github.com/heldr/) | [![Matija Marohnić](https://avatars2.githubusercontent.com/u/471278?v=3&s=144)](https://github.com/silvenon) |
+| -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| [Roy Lee](https://github.com/roylee0704)                                                                 | [Helder Santana](https://github.com/heldr/)                                                               | [Matija Marohnić](https://github.com/silvenon)                                                               |
+
+## License
+
 MIT
