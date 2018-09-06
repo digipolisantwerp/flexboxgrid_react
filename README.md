@@ -7,8 +7,8 @@
 `react-flexbox-grid` is a set of React components that implement [flexboxgrid.css](https://goo.gl/imrHBZ). It even has an optional support for [CSS Modules](https://github.com/webpack-contrib/css-loader#css-modules) with some extra configuration.
 
 This version of `react-flexbox-grid` is meant to be used with Digipolis related applications.
-Instead of using the the default stylesheet it uses an adjusted stylesheet according to the
-style guide of city of Antwerp.
+Instead of using the default stylesheet it uses an adjusted stylesheet according to the
+style guide of the city of Antwerp.
 
 This version relies on the @a-ui npm package, to provide the adjusted stylesheet.
 
